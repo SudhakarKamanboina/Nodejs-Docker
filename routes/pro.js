@@ -52,18 +52,18 @@ var collection = db.collection('StudentInfo');
 });
 
 
-router.get('/furnitureItem/:name', function(req, res) {
+router.get('/StudentInfo/:name', function(req, res) {
 
  var requestedItem =  req.params.name; 
  console.log(requestedItem);
  var Db = require('mongodb').Db,
     MongoClient = require('mongodb').MongoClient;
 
-   MongoClient.connect("mongodb://localhost:27017/test", function(err, db) {
+   MongoClient.connect("mongodb://192.168.59.103:8888/StudentInfo", function(err, db) {
  if(!err) {
    console.log("We are connected");
  
-var collection = db.collection('furniture');
+var collection = db.collection('StudentInfo');
 // Locate all the entries using find
    collection.findOne({name:requestedItem}, function(err, results) {
        console.dir(results);
