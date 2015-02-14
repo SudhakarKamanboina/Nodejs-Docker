@@ -19,7 +19,7 @@ res.send(addresses);
 });
 
 
-router.get('/sudh', function(req, res) {
+router.get('/StudentInfo', function(req, res) {
 
  var Db = require('mongodb').Db,
     MongoClient = require('mongodb').MongoClient,
@@ -33,11 +33,11 @@ router.get('/sudh', function(req, res) {
     BSON = require('mongodb').pure().BSON,
     assert = require('assert');
 
- MongoClient.connect("mongodb://192.168.59.103:8888/admin", function(err, db) {
+ MongoClient.connect("mongodb://192.168.59.103:8888/StudentInfo", function(err, db) {
  if(!err) {
    console.log("We are connected");
  
-var collection = db.collection('sudh');
+var collection = db.collection('StudentInfo');
    // Locate all the entries using find
    collection.find().toArray(function(err, results) {
        console.dir(results);
